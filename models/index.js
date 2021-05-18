@@ -9,3 +9,9 @@ const User = require("./User.js");
 /* models are used to make editing mySQL easier */
 
 // will be used in schema - mySQL
+
+
+
+
+// export to be used in other files - exporting as object. 
+module.exports = {Comment, Post, User}; 
