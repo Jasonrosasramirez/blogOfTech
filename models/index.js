@@ -6,12 +6,12 @@ const Post = require("./Post.js");
 const User = require("./User.js");
 
 
-/* models are used to make editing mySQL easier */
+/* What are we doing with the models */
 
 // will be used in schema - mySQL
 
 
 
 
-// export to be used in other files - exporting as object. 
+// export to be used in other files - exporting as an object. 
 module.exports = {Comment, Post, User}; 
