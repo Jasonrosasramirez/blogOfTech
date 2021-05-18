@@ -13,7 +13,7 @@ const postRoutes = require("./post-routes");
 const userRoutes = require("./user-routes");
 
 
-// 
+// middleware routes
 router.use("/post", postRoutes);
 router.use("/comment", commentRoutes);
 router.use("/user", userRoutes); 
