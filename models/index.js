@@ -8,7 +8,7 @@ const User = require("./User.js");
 
 /* What are we doing with the models */
 
-// will be used in schema - mySQL
+// will be used in schema - mySQL - need to create schema first
 
 
 
