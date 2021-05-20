@@ -19,8 +19,8 @@ router.use("/comment", commentRoutes);
 router.use("/user", userRoutes); 
 
 
-// exporting to be used elsewhere.
-module.exports = router; 
+// exporting to be used by index of controllers folder. 
+module.exports = router; // represents everything in the API folder.
 
 
 // references 
