@@ -1,4 +1,4 @@
-/*  creates the teather for the myDQL databases  */ 
+/*  creates the teather for the myDQL databases.  */ 
 
 // imports the sequalize library
 const Sequelize = require("sequelize"); 
@@ -19,4 +19,6 @@ const sequalize = new Sequelize(
     }
 ); 
 
-module.export = sequalize; 
+
+// exporting the object containing the DB information. 
+module.export = sequalize; // being used in model folder information. 
