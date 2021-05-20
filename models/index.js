@@ -14,4 +14,4 @@ const User = require("./User.js");
 
 
 // export to be used in other files - exporting as an object. 
-module.exports = {Comment, Post, User}; 
+module.exports = {Comment, Post, User}; // used in home-routes 
