@@ -32,7 +32,21 @@ router.get('/new', withAuth, (req, res) => {
 
 });
 
+// /edit route 
+router.get('/edit/:id', withAuth, async (req, res) => {
+    try {
+        // best case scenario  
+        const Tweetpost = await Post.findByPk(req.params.id);
+  
+
+    } catch (err) {
+        // if there is an issue. 
 
 
+    }
+
+  });
+
+  
 // exporting 
 module.exports = router; 
