@@ -30,6 +30,9 @@ router.get('/new', withAuth, (req, res) => {
       layout: 'dashboard',
     });
 
-  });
+});
 
-  
+
+
+// exporting 
+module.exports = router; 
