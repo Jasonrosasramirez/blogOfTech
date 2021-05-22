@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { model } = require("../../../../Main/config/config.js");
 const {Post} = require("../../models/index.js"); // referencing the user model
 const withAuth = require("../../utils/auth.js");
 
@@ -31,3 +32,32 @@ router.put("/:id", withAuth, async (req, res) =>{
     }
 
 }); 
+
+// get deleted. Get, get deleted. 
+router.delete("/:id", withAuth, async (req, res) => {
+    try {
+        // best case scenario
+        const [intendedRows] = Post.destroy({
+            where: { // what is considered in scope.
+                id: req.params.id,
+            },
+        });
+
+        // the actions 
+        if (intendedRows <= 0 ) {
+            // if there is nothing to delete.
+            res.status(404).end(); // show there is a dead link.  
+        } else {
+            // greater than 0 means things were deleted correctly. 
+            res.status(200).end();
+        }
+
+    } catch (err) {
+        // if an error happens
+        res.status(500).json(err); // display the error as a json format. 
+    }
+
+}); 
+
+// exporting the route
+module.exports = router; 
