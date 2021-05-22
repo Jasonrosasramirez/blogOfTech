@@ -41,18 +41,22 @@ router.get("/signup", (req,res) => {
 // for the post :D 
 router.get("/post/:id", async (req, res) => {
     try {
+        const tweetPost = await Post.findByPk(req.params.id, {
+            include: [ User, {model: Comment, include: [User], } ],
+        }); 
 
+        if (tweetPost) {
+            const post = tweetPost.get({ plain:true });
+            res.render("single-post", {post});
+        } else {
+            res.status(404).end();
+        }
 
-    }
-
-    catch (err) {
+    } catch (err) {
         res.status(500).json(err); 
     }
 
 }); 
-
-
-
 
 // exporting file 
 module.exports = router; 
