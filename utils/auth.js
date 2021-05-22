@@ -6,3 +6,5 @@ const withAuth = (req, res, next) => {
     }
 }; 
 
+// exporting
+module.exports = withAuth; 

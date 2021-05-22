@@ -1,1 +1,5 @@
-const format_date; 
+const helpers = {
+    format_date: date => {
+        
+    }
+}
