@@ -37,7 +37,15 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         // best case scenario  
         const Tweetpost = await Post.findByPk(req.params.id);
-  
+        
+        if (tweetPost) {
+            const post = tweetPost.get({ plain: true }); 
+
+            res.render("edit-post", {
+                layout: "dashboard", 
+                post, 
+            }); 
+        }
 
     } catch (err) {
         // if there is an issue. 
@@ -47,6 +55,6 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 
   });
 
-  
+
 // exporting 
 module.exports = router; 
