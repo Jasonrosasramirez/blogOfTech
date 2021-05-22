@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../models');
 const withAuth = require('../utils/auth.js');
 
+// main 
 router.get("/", withAuth, async (req, res) => {
     try {
         // best case scenario
@@ -12,12 +13,14 @@ router.get("/", withAuth, async (req, res) => {
         }); 
 
         const posts = tweetPost.map((post) => post.get({ plain: true }));
-    
-    
-    
+        res.render("all-post-admin", {
+            layout: "dashboard", 
+            posts, 
+        });
     
     } catch (err) {
         res.redirect("login");
+        console.log("error with dashbord main / ");
     }
+}); 
 
-})
