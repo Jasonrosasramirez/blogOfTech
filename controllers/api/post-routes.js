@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { model } = require("../../../../Main/config/config.js");
 const {Post} = require("../../models/index.js"); // referencing the user model
 const withAuth = require("../../utils/auth.js");
 
