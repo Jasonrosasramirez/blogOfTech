@@ -45,15 +45,18 @@ router.get('/edit/:id', withAuth, async (req, res) => {
                 layout: "dashboard", 
                 post, 
             }); 
+
+        }   else {
+            res.status(404).end(); // page missing. end the process
         }
 
     } catch (err) {
         // if there is an issue. 
-
-
+        res.redirect("login"); 
+        console.log("issue with dashboard-routes err"); 
     }
 
-  });
+});
 
 
 // exporting 
