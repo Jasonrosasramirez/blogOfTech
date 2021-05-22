@@ -28,3 +28,14 @@ router.post('/', async (req, res) => {
     }
 
 });
+
+
+
+
+
+
+
+
+
+// exporting information 
+module.exports = router; 
