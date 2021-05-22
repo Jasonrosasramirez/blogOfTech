@@ -28,7 +28,7 @@ router.get("/login", (req, res) => {
     res.render("login"); // renders the page in response. 
 });
 
-//SignUp here :D 
+// SignUp here :D 
 router.get("/signup", (req,res) => {
     if (req.session.loggedIn) {
         res.redirect("/"); // brings us back to the home page. 
@@ -38,7 +38,18 @@ router.get("/signup", (req,res) => {
     res.render("signup"); // brings up the render model. 
 }); 
 
+// for the post :D 
+router.get("/post/:id", async (req, res) => {
+    try {
 
+
+    }
+
+    catch (err) {
+        res.status(500).json(err); 
+    }
+
+}); 
 
 
 
