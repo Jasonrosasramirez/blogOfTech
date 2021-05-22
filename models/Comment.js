@@ -9,7 +9,6 @@ Comment.init(
             type: Datatypes.STRING,
             allowNull: false
         }
-
     },
 
     {
