@@ -28,6 +28,15 @@ router.get("/login", (req, res) => {
     res.render("login"); // renders the page in response. 
 });
 
+//SignUp here :D 
+router.get("/signup", (req,res) => {
+    if (req.session.loggedIn) {
+        res.redirect("/"); // brings us back to the home page. 
+        return;
+    }
+
+    res.render("signup"); // brings up the render model. 
+}); 
 
 
 
