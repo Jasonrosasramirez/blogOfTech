@@ -7,4 +7,4 @@ const withAuth = (req, res, next) => {
 }; 
 
 // exporting
-module.exports = withAuth; 
+module.exports = withAuth; // will be used in dashboard-routes.js

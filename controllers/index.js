@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 // referencing the siblings files and api folder
 const apiIndexRoutes = require("./api/index.js"); // this file references all of the api folder files 
-const dashboardRoutes = require("./dashboard-routes");
+const dashboardRoutes = require("./dashboard-routes.js");
 const homeRoutes = require("./home-routes.js");
 
 // routing use
