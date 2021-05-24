@@ -57,7 +57,16 @@ router.post("/login", async (req, res) => {
 
 
         // save session information 
-        
+        req.session.save(() => {
+            // storing the session as the request 
+            req.session.userId = user.id; // saving as the id. 
+            req.session.username = user.username;
+            req.session.loggedIn = true;
+            req.json({ 
+                user,
+                message: "Your information has been saved :D \nYour"
+            });
+        });
 
     } catch (err) { 
         res.status(400).json({message: "A user account could not be found :("}); 
@@ -67,17 +76,18 @@ router.post("/login", async (req, res) => {
 
 // logoff section 
 router.post("/logout", async (req, res) => {
-    try {
+    if (req.session.loggedIn) { // if we're logged in
+        
+        req.session.destroy(() => { // destroy the request session object
+            res.status(204).end(); // send status 204
+            return;
+        });
 
-
-    } catch (err) {
-
-
+    } else {
+        res.status(404).end(); // page is missing otherwise. 
     }
 
-
 });
-
 
 // exporting information 
 module.exports = router; 
