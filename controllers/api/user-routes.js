@@ -1,7 +1,8 @@
 const router = require("express").Router();
+const { Router } = require("express");
 const { User } = require("../../models");
 
-// Home 
+// Home section
 router.post('/', async (req, res) => {
     try {
         // base case scenario.
@@ -29,10 +30,19 @@ router.post('/', async (req, res) => {
 
 });
 
+// login section 
+router.post("/login", async (req, res) => {
 
 
 
+});
 
+// logoff section 
+router.post("/logout", async (req, res) => {
+
+
+
+});
 
 
 
