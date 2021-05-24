@@ -32,14 +32,25 @@ router.post('/', async (req, res) => {
 
 // login section 
 router.post("/login", async (req, res) => {
+    try {
 
 
+    } catch (err) {
+
+
+    }
 
 });
 
 // logoff section 
 router.post("/logout", async (req, res) => {
+    try {
 
+
+    } catch (err) {
+
+
+    }
 
 
 });
