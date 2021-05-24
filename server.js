@@ -5,8 +5,6 @@ const handleBars = require("express-handlebars");
 const session = require("express-session");
 const path = require("path");
 
-// const sequelize
-const SequelizeStore = require("connect-session-sequalize")(session.Store);
 
 // express server settings (The framework)
 const app = express();
