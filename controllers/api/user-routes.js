@@ -33,11 +33,34 @@ router.post('/', async (req, res) => {
 // login section 
 router.post("/login", async (req, res) => {
     try {
+        // Varaible to represent the user object
+        const user = await User.findOne({
+            where: {
+                usermame: req.body.username,
+            }, 
+        });
+
+        // returns if the user has a valid password. 
+        const isPasswordValid = user.checkPassword(req.body.password);
 
 
-    } catch (err) {
+        // check if the assets are in place
+        if (!user) {    // if the user is not available
+            res.status(400).json({message: "A user acount is missing :("}); // send the error message as a json with the object element message. 
+            return; 
+        }
+
+        if (!isPasswordValid) { // if the password is not available 
+            res.status(400).json({message: "A password is missing"});
+            return; 
+        }
 
 
+        // save session information 
+        
+
+    } catch (err) { 
+        res.status(400).json({message: "A user account could not be found :("}); 
     }
 
 });
@@ -54,8 +77,6 @@ router.post("/logout", async (req, res) => {
 
 
 });
-
-
 
 
 // exporting information 
