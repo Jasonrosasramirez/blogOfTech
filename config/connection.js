@@ -4,7 +4,7 @@
 const Sequelize = require("sequelize"); 
 require("dotenv").config(); // imports DB values from the .env file. 
 
-const sequalize = new Sequelize(
+const sequelize = new Sequelize(
     // DB_ values from .env file
     
     process.env.DB_NAME, // will be TechBlogger_DB. 
@@ -21,4 +21,4 @@ const sequalize = new Sequelize(
 
 
 // exporting the object containing the DB information. 
-module.export = sequalize; // being used in model folder information. 
+module.exports = sequelize; // being used in model folder information. 
