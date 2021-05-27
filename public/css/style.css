@@ -3,3 +3,8 @@
 * {
     box-sizing: border-box;
 }
+
+.tweet { /* Used as the twitter comment bubble */
+    border: black 2px solid; 
+}
+
