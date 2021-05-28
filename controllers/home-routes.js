@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
         }); 
 
         const posts = tweetPost.map((post) => post.get({ plain: true }));
-        res.render("all-post", {posts}); 
+        res.render("../views/all-posts", {posts}); 
     
     }   catch (err) {
             console.log("error on home routes /home");
