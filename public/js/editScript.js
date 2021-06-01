@@ -27,10 +27,9 @@ const editTweet = async function(event) {
         }
     }); 
 
-
-
-    
+    document.location.replace("/dashboard"); // updates the dashboard page where all of the posts are stored
 };
+
 
 // Delete the post entirely
 const deleteTweet = async function(event) {
@@ -41,4 +40,12 @@ const deleteTweet = async function(event) {
 
 
 /* -- Call the Event Listeners */
-// document.addEventListener();
+// DOM Target Variables
+const editTweet_Target; // document.querySelector("")
+const deleteTweet_Target; // document.querySelector("")
+
+// Edit Tweet -- Activates on click
+// editTweet_Target.addEventListener("", editTweet);
+
+// Delete Tweet -- Activates on click
+// deleteTweet_Target.addEventListener("", deleteTweet);
