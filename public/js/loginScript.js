@@ -15,6 +15,7 @@ const loginHandler = async function(event) {
             password: passwordEl.value, 
         }), 
         headers: {"Content-Type": "application/json"}
+
     });
     
     if (response.ok) { // if response is able 
@@ -24,3 +25,4 @@ const loginHandler = async function(event) {
     }
 };
 
+// 
