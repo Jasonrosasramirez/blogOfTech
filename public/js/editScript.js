@@ -34,7 +34,12 @@ const editTweet = async function(event) {
 // Delete the post entirely
 const deleteTweet = async function(event) {
 
-    document; // document.querySelector.value;
+    // gather informtion from the target
+    await fetch(`/api/post/${postId}`, {
+        method: "DELETE" // Delete existing resource
+    }); 
+
+    document.location.replace("/dashboard"); // updates the dashboard page where all of the posts are stored
 
 }; 
 
