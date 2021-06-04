@@ -3,9 +3,6 @@ require("dotenv").config();
 
 /*  creates the teather for the myDQL databases.  */ 
 
-
-
-
   const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
     : new Sequelize(
@@ -18,8 +15,6 @@ require("dotenv").config();
       port: 3306,
     },
   );
-
-
 
 // exporting the object containing the DB information. 
 module.exports = sequelize; // being used in model folder information. 
